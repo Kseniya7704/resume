@@ -2,32 +2,11 @@
 Це код container файлу для summary сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
-
-<div>
-    <header>
-        <div>
-            <h1>{{name.firstname}} {{name.lastname}}</h1>
-        </div>
-        <div>
-            <b>{{position}}</b>
-        </div>
-        <br>
-        <div>
-            <em>{{salary.text}} {{salary.value}}</em>
-        </div>
-        <br>
-        <hr>
-    </header>
-
-    <nav>
-        <a href="/skills">Skills</a>
-        <a href="/summary">Summary</a>
-    </nav>
-
+{{#with main}}
     <main>
         <section>
             <div>
-                <h2>{{> title data = summary.title}}</h2>
+                {{> title data = summary.title big=true}}
             </div>
             <div>
                 <p>
@@ -36,28 +15,20 @@
             </div>
         </section>
 
-        {{#with section}}
-            <div>
-                <h2>{{> title data = experience.title}}</h2>
-            </div>
-            <div>
+        {{#with experience}}
+            <section>
+                <div>
+                {{> title data = title big=false}}
                 <p>
-                    {{experience.text}}
+                    {{text}}
                 </p>
             </div>
+            </section>
         {{/with}}
     </main>
+    {{/with}}
 
-    <footer>
-        <hr>
-        <br>
-        {{#with social}}
-        <a href="{{email.href}}">{{email.text}}</a> /
-        <a href={{phone.href}}>{{phone.text}}</a> /
-        <a href="https://www.linkedin.com/in/dmytro-test" target="_blank">LinkedIn</a>
-        {{/with}}
-    </footer>
-
+   
 </div>
 
 {{!-- 
