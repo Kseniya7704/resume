@@ -1,0 +1,113 @@
+<div>
+   {{#with person}}
+   <h1>{{name}}</h1>
+   <h2>{{age}} years, {{gender}}</h2>
+
+    <address>
+      123 Main St <br />
+      New York, NY, 10001 <br />
+      USA <br />
+   </address>
+   {{/with}}
+   
+   <br>
+   <hr>
+
+
+   {{> title data="Education"}}
+    <ul>
+        {{#each person.education}}
+        <li>
+            <div>{{university}} ({{graduationYear}})</div>
+            <br>
+            <div>{{major}}</div>
+            <br>
+            <div>{{degree}}</div>
+        </li>
+        {{/each}}
+    </ul>
+
+   <br>
+   <hr>
+
+   {{> title data="Work"}}
+    <ul>
+    {{#each person.workExperience}}
+        <li>
+            <div>{{company}}</div>
+            <br>
+            <div>{{title}}</div>
+            <br>
+            <div>{{startDate}} - {{endDate}}</div>
+        </li>
+    {{/each}}
+    </ul>
+
+    <br>
+
+    <div>
+        <strong>Responsibilities</strong>
+    </div>
+    <ol>
+    <li>
+        Developed new features for Google Maps
+    </li>
+    <li>
+        Worked on improving search algorithms
+    </li>
+    </ol>
+
+    <br>
+    <hr>
+
+    <h3>
+        <strong>Technology (1990)</strong>
+    </h3>
+
+
+    <em>{{> title data="Employees"}}</em>
+    <ul>
+    <li>John Smith, CEO <br />
+        Executive <br />
+    </li>
+    </ul>
+    
+    <b>Projects:</b>
+    <ul>
+        <li>Project Alpha "Developing new software platform" (In Progress)</li>   
+    </ul>
+    
+    <b><ins>Team members:</ins></b>
+    <ol>
+        <li><b><em>Alice Johnson</em></b><br />
+        </li>
+    </ol>
+    Software Engineer <br />
+    <a href="email: alice.johnson@example.com">alice.johnson@example.com</a>
+    <br>
+    <ins>Skills:</ins> Java, Python, SQL
+    <br>
+    <br>
+    <b>Projects:</b>
+    <ul>
+        <li>Lorem ipsum dolor sit amet // Tech. Java, Spring Framework</li>   
+    </ul>
+
+    <br>
+    <hr>
+
+    <ol>
+        <li value="2"><b><em>Bob Lee</em></b><br />
+        </li>
+    </ol>
+    Software Engineer <br />
+
+    <br>
+    <hr>
+ 
+    <ol>
+        <li value="3"><b><em>Cindy Chen</em></b><br />
+        </li>
+    </ol>
+    UI Designer <br />
+</div>
