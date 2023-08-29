@@ -161,25 +161,23 @@
                 <li>{{this}}</li>
                 {{/each}}
             </ul>
-                {{/each}}
-            </ul>
-            {{/each}}
-        </ul>
-
-        <br>
-
-        <b><em>Team members</em></b> <br />
+            <br>
+            <b><em>Team members</em></b> <br />
         <br>
         <ul>
             {{#each team_members}}
             <li>
                 {{name}} <br />
-                {{title}} <br />
+                ({{title}})
             </li>
             {{/each}}
         </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+        </ul>
 
-        {{/each}} <br />
+        {{/each}}
 
         {{/each}}
         </li>
