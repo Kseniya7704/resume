@@ -1,113 +1,196 @@
 <div>
-   {{#with person}}
-   <h1>{{name}}</h1>
-   <h2>{{age}} years, {{gender}}</h2>
+    {{#with person}}
+<div>
+    <h1>{{name}}</h1>
 
-    <address>
-      123 Main St <br />
-      New York, NY, 10001 <br />
-      USA <br />
-   </address>
-   {{/with}}
-   
-   <br>
-   <hr>
+    <br>
 
+    <div>Age: {{age}}</div>
 
-   {{> title data="Education"}}
+    <br>
+
+    <div>Gender: {{gender}}</div>
+</div>    
+
+    <br>
+
+    {{#with address}}
+    <div>
+        <address>{{street}}, {{city}}, {{state}}, {{zip}}, {{country}}</address>
+    </div>
+    {{/with}}
+
+    <br>
+
+    <hr>
+
+    <h2>Education</h2>
     <ul>
-        {{#each person.education}}
         <li>
-            <div>{{university}} ({{graduationYear}})</div>
+            {{#each education}}
+            <div>{{degree}}</div>
             <br>
             <div>{{major}}</div>
             <br>
-            <div>{{degree}}</div>
+            <div>{{university}} ({{graduationYear}})</div>
+            <br>
+            {{/each}}
         </li>
-        {{/each}}
     </ul>
 
-   <br>
-   <hr>
+    <br>
+    <hr>
 
-   {{> title data="Work"}}
+    <h2>Work</h2>
     <ul>
-    {{#each person.workExperience}}
         <li>
-            <div>{{company}}</div>
-            <br>
-            <div>{{title}}</div>
-            <br>
-            <div>{{startDate}} - {{endDate}}</div>
+            {{#each workExperience}}
+    <h3>{{company}}</h3>
+    <div>{{title}}</div>
+    <br>
+    <div>
+        <date>{{startDate}} - {{endDate}}</date>
+    </div>
+
+    <br>
+
+    <ul>
+        {{#each responsibilities}}
+        <li>
+            {{this}}
         </li>
-    {{/each}}
+        {{/each}}
     </ul>
 
     <br>
 
     <div>
-        <strong>Responsibilities</strong>
+        <date>{{year_founded}}</date>
     </div>
-    <ol>
-    <li>
-        Developed new features for Google Maps
-    </li>
-    <li>
-        Worked on improving search algorithms
-    </li>
-    </ol>
+
+    <br>
+
+    <div>{{industry}}</div>
 
     <br>
     <hr>
 
-    <h3>
-        <strong>Technology (1990)</strong>
-    </h3>
+    <div>
+        <h4>Employees:</h4>
+    </div>
 
+    <br>
 
-    <em>{{> title data="Employees"}}</em>
     <ul>
-    <li>John Smith, CEO <br />
-        Executive <br />
-    </li>
-    </ul>
-    
-    <b>Projects:</b>
+        <li>
+        {{#each employees}}
+        {{name}}, 
+        {{position}} 
+        {{department}}
+
+         <h5>Projects:</h5>
     <ul>
-        <li>Project Alpha "Developing new software platform" (In Progress)</li>   
-    </ul>
-    
-    <b><ins>Team members:</ins></b>
-    <ol>
-        <li><b><em>Alice Johnson</em></b><br />
-        </li>
-    </ol>
-    Software Engineer <br />
-    <a href="email: alice.johnson@example.com">alice.johnson@example.com</a>
-    <br>
-    <ins>Skills:</ins> Java, Python, SQL
-    <br>
-    <br>
-    <b>Projects:</b>
+        <li>
+            {{#each projects}}
+            {{name}}
+            {{description}}
+            ({{status}}) <br />
+
+            <br>
+
+        <b>Teams</b> <br />
+
+        <br>
+
     <ul>
-        <li>Lorem ipsum dolor sit amet // Tech. Java, Spring Framework</li>   
+        <li>
+        {{#each teams}}
+        {{team_name}} <br />
+
+        <br>
+
+        <b><em>Team leader</em></b> <br />
+
+        <br>
+
+        {{#with team_leader}}
+        {{name}} <br />
+        {{title}} <br />
+        {{email}} <br />
+        {{/with}}
+        <br>
+
+        <b><em>Team members</em></b> <br />
+        <br>
+        <ul>
+            {{#each team_members}}
+            <li>
+                {{name}} <br />
+                {{title}} <br />
+                {{email}} <br />
+            </li>
+
+            <br>
+
+            <b><u>Skills:</u></b>
+            <br>
+            <br>
+        <ul>
+            {{#each skills}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <br>
+            <b><u>Projects:</u></b>
+            <br>
+            <br>  
+            <ul>
+                {{#each projects}}
+                <li>
+                    {{name}}
+                    "{{description}}"
+                </li>
+
+                 <br>
+            <b><u>Technologies:</u></b>
+            <br>
+            <br>
+            <ul>
+                {{#each technologies}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+        </ul>
+
+        <br>
+
+        <b><em>Team members</em></b> <br />
+        <br>
+        <ul>
+            {{#each team_members}}
+            <li>
+                {{name}} <br />
+                {{title}} <br />
+            </li>
+            {{/each}}
+        </ul>
+
+        {{/each}} <br />
+
+        {{/each}}
+        </li>
+    </ul>
+        {{/each}}
+        </li>
+    </ul>
+    {{/each}}
+        </li>
     </ul>
 
-    <br>
-    <hr>
+    {{/with}}
 
-    <ol>
-        <li value="2"><b><em>Bob Lee</em></b><br />
-        </li>
-    </ol>
-    Software Engineer <br />
-
-    <br>
-    <hr>
- 
-    <ol>
-        <li value="3"><b><em>Cindy Chen</em></b><br />
-        </li>
-    </ol>
-    UI Designer <br />
 </div>
