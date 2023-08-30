@@ -33,20 +33,7 @@
             {{#with location}}
             {{address}}, {{city}}, {{country}}
             {{/with}}
-            {{/with}}
-
-            {{#with venue}} <br />
-            {{name}} <br />
-            {{#with location}} 
-            {{address}}, {{city}}, {{country}} <br />  
-            {{/with}}
-            {{/with}}
-          
-    
-
-                <br>
-
-        <h5>Exhibits</h5>
+            <h5>Exhibits</h5>
                 <ul>
             {{#each exhibits}}
                 <li>
@@ -58,7 +45,32 @@
                   {{/each}}
 
                 </ul>
-              {{/with}}
+            {{/with}}
+
+            {{#with venue}} <br />
+            {{name}} <br />
+            {{#with location}} 
+            {{address}}, {{city}}, {{country}} <br />  
+            {{/with}}
+            {{/with}}
+
+            <br>
+
+            <b>Performers</b>
+
+              <br>
+              <br>
+
+              <ul>
+                {{#with performers}}
+                <li>
+                    {{name}} <br />
+                    {{type}}
+                </li>
+                {{/with}}
+              </ul>
+
+              <br>
 
               <br>
                
@@ -69,12 +81,15 @@
                 ({{rating}})
               {{/with}}
 
+              <br>
         
             {{/with}}
           </li>
         {{/each}}
            </ul>
        {{/with}}
+       
     {{/with}}
+
   </div>
 </div>
