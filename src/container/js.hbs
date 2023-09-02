@@ -1,0 +1,190 @@
+<div>
+
+ <main>
+    <section>
+      {{> title data='JavaScript' big=true}}
+
+
+      <hr>
+
+      <div>
+        {{description}}
+      </div> 
+      
+      <br>
+
+      <div>
+        {{#with history}} 
+        <date>{{year}}</date> 
+        <br>
+        {{founder}}
+        <br>
+        {{/with}} 
+        <br>
+        </div>
+      
+      <div class="dropdown">
+          <button type="button" class="btn btn-secondary btn-sm">Types</button>
+          <br>
+          <br>
+            {{#each types}}
+            <li>
+              <a class="dropdown-item" href="#">{{this}}</a>
+            </li>
+            {{/each}} 
+          </ul>
+      </div>
+      
+      <br>
+
+        <b>Syntax:</b>
+
+        <br>
+        <br>
+
+      <div class="dropdown">
+          <button type="button" class="btn btn-secondary btn-sm">Variables</button>
+            
+          <ul class="dropdown-menu">
+            {{#each syntax.variables}}
+            <li>
+              <a class="dropdown-item" href="#">{{this}}</a>
+            </li>
+            {{/each}} 
+          </ul>
+      </div>
+      
+         <br>
+
+      <div class="dropdown">
+          <button type="button" class="btn btn-secondary btn-sm">Functions</button>
+
+          <ul class="dropdown-menu">
+            {{#each syntax.functions}}
+            <li>
+              <a class="dropdown-item" href="#">{{this}}</a>
+            </li>
+            {{/each}} 
+          </ul>
+      </div>
+      
+          <br>
+
+      <div class="dropdown">
+          <button type="button" class="btn btn-secondary btn-sm">Conditionals</button>
+
+          <ul class="dropdown-menu">
+            {{#each syntax.conditionals}}
+            <li>
+              <a class="dropdown-item" href="#">{{this}}</a>
+            </li>
+            {{/each}} 
+          </ul>
+      </div>
+      
+           <br>
+
+      <div class="dropdown">
+          <button type="button" class="btn btn-secondary btn-sm">Loops</button>
+
+          <ul class="dropdown-menu">
+            {{#each syntax.loops}}
+            <li>
+              <a class="dropdown-item" href="#">{{this}}</a>
+            </li>
+            {{/each}} 
+          </ul>
+      </div>
+      
+           <br>
+
+      <div class="dropdown">
+          <button type="button" class="btn btn-secondary btn-sm">Classes</button>
+
+          <ul class="dropdown-menu">
+            {{#each syntax.classes}}
+            <li>
+              <a class="dropdown-item" href="#">{{this}}</a>
+            </li>
+            {{/each}} 
+          </ul>
+      </div>
+      
+           <br>
+
+
+      <b>Features:</b>
+      <br>
+      <br>
+
+      <div class="dropdown">
+          <button type="button" class="btn btn-secondary btn-sm">Features</button>
+
+          <ul class="dropdown-menu">
+            {{#each features}}
+            <li>
+              <a class="dropdown-item" href="#">{{this}}</a>
+            </li>
+            {{/each}} 
+          </ul>
+          </div>
+          
+          <br>
+
+      <b>Libraries:</b>
+      <br>
+      <br>
+      
+      <div class="dropdown">
+          <button type="button" class="btn btn-secondary btn-sm">Libraries</button>
+
+          <ul class="dropdown-menu">
+            {{#each libraries}}
+            <li>
+              <a class="dropdown-item" href="#">{{this}}</a>
+            </li>
+            {{/each}} 
+          </ul>
+          </div>
+          
+          <br>
+
+          <b>Tools:</b>
+          <br>
+          <br>
+
+      <div class="dropdown">
+          <button type="button" class="btn btn-secondary btn-sm">Tools</button>
+
+          <ul class="dropdown-menu">
+            {{#each tools}}
+            <li>
+              <a class="dropdown-item" href="#">{{this}}</a>
+            </li>
+            {{/each}} 
+          </ul>
+          </div>
+          
+          <br>
+
+          <b>Community:</b>
+          <br>
+          <br>
+      
+      <div class="dropdown">
+          <button type="button" class="btn btn-secondary btn-sm">Community</button>
+
+          <ul class="dropdown-menu">
+            {{#each community}}
+            <li>
+              <a class="dropdown-item" href="#">{{name}} ({{type}})</a>
+            </li>
+            {{/each}} 
+          </ul>
+          </div>
+          <br>
+
+      </section>
+  </main>
+
+</div>
