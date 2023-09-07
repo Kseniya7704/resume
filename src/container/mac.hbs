@@ -1,0 +1,144 @@
+<div>
+
+ <main>
+    <section>
+      <h1>Notebooks</h1>
+      <hr>
+
+      <h3>{{name}}</h3>
+        <div>{{description}}</div> 
+           <br>
+        <div>Price: {{price}}$</div>
+           <br>
+        <div>Category: {{category}}</div>
+      <br>
+      <hr>
+      <br>
+
+      <div>
+        <b>Features:</b>
+        <br>
+        <br>
+
+        {{#with features}}
+          {{#with processor}} Processor:
+          {{brand}}, 
+          {{model}}, 
+          {{speed}}, 
+          {{cores}} cores, 
+          {{cache}} cache 
+          
+          <br>
+          <br>
+
+          {{/with}}
+
+          {{#with memory}} Memory: 
+          {{type}}, 
+          {{size}}, 
+          {{speed}} 
+          
+          <br>
+          <br>
+
+          {{/with}}
+
+          {{#with storage}} Storage: 
+          {{type}}, 
+          {{size}} 
+          
+          <br>
+          <br>
+
+          {{/with}}
+
+          {{#with display}} Display: 
+          {{size}}, 
+          {{resolution}}, 
+          {{technology}}, 
+          {{color_space}}, 
+          {{brightness}}, 
+          {{refresh_rate}}
+          
+          <br>
+          <br>
+
+          {{/with}}
+
+          {{#with graphics}} Graphics: 
+          {{brand}}, 
+          {{model}}, 
+          {{memory}} 
+          
+          <br>
+          <br>
+
+          {{/with}}
+          
+          <b>Ports:</b>
+          <ul>
+          {{#each ports}}
+          <li>
+            type: {{type}}
+            <br>
+            count: {{count}}
+            <br>
+            <br>
+              <ul>
+          {{#each features}}
+                  <li>
+                  {{this}}
+                  <br>
+                  <br>
+                  </li>
+                {{/each}}
+              </ul>
+          </li>
+          {{/each}}
+          </ul>
+
+          {{#with battery}} Battery: 
+          {{type}}, 
+          {{capacity}}, 
+          {{life}}
+          <br>
+          <br>
+          {{/with}}
+
+          Weight: {{weight}}
+          <br>
+          <br>
+          {{#with dimensions}} Dimensions: 
+          height: {{height}}, 
+          width: {{width}}, 
+          depth: {{depth}}
+          <br>
+          <br>
+          {{/with}}
+
+          Operating system: {{operating_system}}
+          <br>
+          <br>
+          <hr>
+          
+          <b>Accessories:</b>
+          <ul>
+            {{#each accessories}}
+              <li>
+                {{name}}
+                <br>
+                {{price}}$
+                <br>
+                <br>
+              </li>
+            {{/each}}
+          </ul>
+
+        {{/with}}
+      </div>
+        </div>
+
+      </section>
+  </main>
+
+</div>
