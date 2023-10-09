@@ -1,0 +1,153 @@
+<main class="p-3">
+ <div class="row">
+    <div class="col-12 gy-2">
+        <div class="card">
+            <div class="card-body">
+        <div class="nav nav-tabs">
+            {{#with navigation}}
+            {{#each links}}
+            <div class="nav-item">
+        <a href="{{href}}" class="nav-link">{{text}}</a>
+            </div>
+            {{/each}}
+            <div class="col-2">
+            <div class="nav-item">
+                <a href="#" class="nav-link disabled">Disabled</a>
+            </div>
+        </div>
+            {{/with}}
+        </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ <nav aria-label='breadcrumb'>
+    <ol class='breadcrumb my-5'>
+      {{#each breadcrumb}}
+        <li class='breadcrumb-item'><a
+            href='{{url}}'>{{name}}</a></li>
+      {{/each}}
+    </ol>
+  </nav>
+
+  <h1>{{header}}</h1>
+
+  <div class='row my-3'>
+    {{#each sortBlock}}
+      <div class='col-4'>
+        <select class='form-select'>
+          <option
+            class='placeholder'>{{placeholder}}</option>
+          {{#each options}}
+            <option value='{{value}}'>{{text}}</option>
+          {{/each}}
+        </select>
+      </div>
+    {{/each}}
+  </div>
+
+  <div class='row'>
+    {{#with filterBlock}}
+      {{#with sellers}}
+        <div class='card col-4 mx-1'>
+          <div class='card-body'>
+            <div class='form-label'>{{title}}</div>
+            {{#each list}}
+              <div class='form-check'>
+                <label class='form-check-label'>{{value}}</label>
+                <input type='checkbox' class='form-check-input'>
+              </div>
+            {{/each}}
+            {{/with}}
+            <hr>
+            {{#with brands}}
+              <div>
+                <label class='form-label'>{{title}}</label>
+                <input class='form-control' />
+                <option
+                  class='placeholder'
+                >{{placeholder}}</option>
+                {{#each options}}
+                    <div class='form-check'>
+                <label class='form-check-label'>{{value}}</label>
+                <input type='checkbox' class='form-check-input'>
+              </div>
+                {{/each}}
+              </div>
+            {{/with}}
+            <hr>
+            {{#with price}}
+            <div>
+                <label class='form-label'>{{title}}</label>
+                {{#with range}}
+                  <input class='form-control my-3' placeholder="{{from}}" />
+                  <input class='form-control my-3' placeholder="{{to}}" />
+                {{/with}}
+                {{#with button}}
+                <a class="btn btn-outline-secondary" href="{{link}}">{{text}}</a>
+                {{/with}}
+
+            </div>
+            {{/with}}
+
+            <hr>
+
+            {{#each filterList}}
+             <div class='form-label'>{{title}}</div>
+            {{#each options}}
+              <div class='form-check'>
+                <label class='form-check-label'>{{value}}</label>
+                <input type='checkbox' class='form-check-input'>
+              </div>
+              {{/each}}
+
+              <hr>
+
+            {{/each}}
+          </div>
+        </div>
+        {{/with}}
+
+        <div class="row col-8">
+            {{#each goodsList}}
+              {{>catalogItem}}
+            {{/each}}
+        </div>
+  </div>
+
+   <div class="card bg-success my-3">
+    <div class="card-body text-center">
+        {{#with service}}
+        <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        {{#each buttons}}
+        <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+        {{/each}}
+        {{/with}}
+    </div>
+  </div>
+  <hr>
+  <section class="col-12 mb-6">
+     <div class="nav">
+        <div class="row">
+            {{#each footer}}
+            <div class="row">
+                {{#each this}}
+                <div class="nav flex-column">
+                    <div class="nav-item mx-2 mb-2">
+                        <a href="{{link}}" class="nav-link">{{text}}</a>                    
+                    </div>
+                    <div class="col-4">
+            <div class="nav-item">
+                <a href="#" class="nav-link disabled">Disabled</a>
+            </div>
+        </div>
+                </div>
+        </div>
+        {{/each}}
+     </div>
+     {{/each}}
+     </div>
+
+</main>
